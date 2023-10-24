@@ -1,0 +1,216 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* Styles for the main container with background image */
+.container {
+    position: relative;
+    height: auto;
+    background-image: url('./background.jpg');
+    background-size: cover;
+    background-position: right bottom;
+    color: white;
+}
+
+/* Pseudo-element to add background opacity */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.main {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 6rem;
+    z-index: 999;
+}
+
+.content {
+    width: 50%;
+}
+
+.image-content img {
+    max-width: 150px;
+    max-height: 50px;
+    margin-top: auto;
+}
+
+h6 {
+    color: #ff5a5f;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 54px;
+    line-height: 1.4;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 700;
+}
+
+.action-button {
+    display: flex;
+    flex-direction: row;
+}
+
+.action-button button {
+    border: 4px solid #ff5a5f;
+    border-radius: 50px;
+    height: auto;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+
+.first-button {
+    background-color: #ff5a5f;
+    margin-right: 30px;
+}
+
+.first-button:hover {
+    opacity: 0.9;
+}
+
+.second-button {
+    background: transparent;
+}
+
+.second-button:hover {
+    color: black;
+    background-color: #ff5a5f;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100px; 
+    margin-top: 50px;
+}
+
+.main-container > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.image-container {
+    display: flex;
+    align-items: center; 
+}
+
+img {
+    max-width: 200px;
+    max-height: 100px;
+}
+
+.block-slider {
+    position: relative;
+}
+
+.prev,
+.next {
+    display: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    
+    position: absolute;
+    bottom: 40px;
+    z-index: 999;
+    opacity: 0.5;
+}
+
+.next {
+    right: 20px;
+}
+
+.next i,
+.prev i {
+    width: 20px;
+    color: red;
+}
+
+.next:hover,
+.prev:hover {
+    opacity: 1;
+}
+
+.slick-dots {
+	display: flex;
+	justify-content: center;
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.slick-dots button {
+    display: block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 8px;
+    
+    border: none;
+    border-radius: 100%;
+    background-color: #ff5a5f;
+    opacity: 0.5;
+    
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.slick-dots li.slick-active button {
+    background-color: red;
+    opacity: 1;
+}
+
+/* Media query for smaller screens */
+@media ( max-width: 780px) {
+    .container {
+        height: 1200px;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .action-button {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        gap: 20px;
+    }
+
+    .first-button {
+        width: 100%;
+    }
+
+    .second-button {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    img {
+        max-width: 150px;
+        max-height: 75px;
+    }
+}
